@@ -1,11 +1,11 @@
-import home from "./pages/home"
+// import {BrowserRouter , Routes , Route } from "react-router";
+import Home from "./pages/Home";
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      <home/>
-    </>
+    <div>
+      <Home/>
+    </div>
   )
 }
 
