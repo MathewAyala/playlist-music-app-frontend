@@ -1,11 +1,25 @@
 
+import {NavLink} from 'react-router' 
 
-function Navbar({ favoritesCount }) {
-  return (
-    <nav style={{ display: "flex", justifyContent: "space-between", padding: 16 }}>
-      Music App
+// function Navbar({ favoritesCount }) {
+//   return (
+//     <nav style={{ display: "flex", justifyContent: "space-between", padding: 16 }}>
+//       Music App
+//     </nav>
+//   );
+// }
+
+// export default Navbar;
+
+function NavBar(){
+
+  return(
+    <nav>
+      <NavLink to='/'>
+        Home
+      </NavLink>
     </nav>
-  );
+  )
 }
 
-export default Navbar;
+export default NavBar
