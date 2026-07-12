@@ -39,6 +39,7 @@ function home() {
 
   return (
     <div>
+        
       <div className="grid">
         {playlists.map((playlist) => (
           <div key={playlist.id}><PlaylistCard
