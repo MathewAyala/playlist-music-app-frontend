@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import "../App.css";
 import PlaylistCard from "../components/PlaylistCard";
 
+
 function Home() {
   const [playlists, setList] = useState([]);
   const [loading, setLoading] = useState(true);
