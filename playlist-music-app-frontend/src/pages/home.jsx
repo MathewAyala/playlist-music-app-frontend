@@ -5,7 +5,7 @@ import heroImg from "../assets/hero.png";
 import "../App.css";
 import PlaylistCard from "../components/PlaylistCard";
 
-function home() {
+function Home() {
   const [playlists, setList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -53,4 +53,4 @@ function home() {
   );
 }
 
-export default home;
+export default Home;
