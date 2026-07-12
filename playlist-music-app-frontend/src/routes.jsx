@@ -1,19 +1,19 @@
-import { BrowserRouter, Routes, Route } from "react-router"; //this is what we need from react router to define routes
-import { useParams } from "react-router"; // basically react version of req.params
-import { useSearchParams } from "react-router"; // basically req.query
+import { BrowserRouter, Routes, Route } from "react-router";
+import { useParams } from "react-router";
+import { useSearchParams } from "react-router";
 import NavBar from "./components/Navbar";
-import Home from "./components/home";
+import Home from "./pages/home";
 
 function AppRoutes() {
     return (
-        <NavBar>
+        <>
+            <NavBar />
             <Routes>
                 <Route path='/' element={<Home/>}/>
-                {/* <Route/>
-                <Route/> */}
-                <Route path='*' element={<NotFounds/>}/>
+                {/* <Route path='/playlists/:id' element={<PlaylistDetail/>}/> */}
+                {/* <Route path='*' element={<NotFound/>}/> */}
             </Routes>
-        </NavBar>
+        </>
     )
 }
 
