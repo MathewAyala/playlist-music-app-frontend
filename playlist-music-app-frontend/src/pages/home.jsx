@@ -1,33 +1,41 @@
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '../assets/vite.svg'
 import heroImg from '../assets/hero.png'
 import '../App.css'
 
 
+
+
+
+
+
+function home() { 
+
     const [playlists, setList ] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [count, setCount] = useState(0);
 
-useEffect(() => {
-    const getData = async () => {
-        try{
-            const response = await fetch('http://localhost:6000/')
-            const data = response.json();
-            console.log(data)
-            setList([...data.results])
-        }catch(err){
-            setError(err.message)
-        }finally{
-            setLoading(false)
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const response = await fetch('http://localhost:6000')
+                if (!response.ok) {
+                    throw new Error('Failed to load playlists')
+                }
+                const data = await response.json()
+                setList(Array.isArray(data) ? data : [])
+                console.log([...data])
+            } catch (err) {
+                setError(err.message)
+            } finally {
+                setLoading(false)
+            }
         }
-    }
-    getData()
-})
+        getData()
+    }, []) 
 
-
-function home() {   
   return (
     <div>
         <div className="grid">
