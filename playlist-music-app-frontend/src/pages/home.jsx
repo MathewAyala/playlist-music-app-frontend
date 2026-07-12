@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import reactLogo from "../assets/react.svg";
-import viteLogo from "../assets/vite.svg";
-import heroImg from "../assets/hero.png";
+import { Link } from "react-router";
 import "../App.css";
 import PlaylistCard from "../components/PlaylistCard";
 
@@ -40,13 +38,15 @@ function Home() {
   return (
     <div>
       <div className="grid">
-        {playlists.map((playlist) => (
-          <div key={playlist.id}><PlaylistCard
-              key={playlist.id}
-              Playlist={playlist}
-            />
-          </div>
-        ))}
+        {playlists.map((playlist) => {
+          return (
+            <div key={playlist.id}>
+              <Link to={`/playlists/${playlist.id}`}>
+                {<PlaylistCard key={playlist.id} Playlist={playlist} />}
+              </Link>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
