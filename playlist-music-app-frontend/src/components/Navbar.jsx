@@ -18,6 +18,11 @@ function NavBar(){
       <NavLink to='/'>
         Home
       </NavLink>
+      <NavLink to='/:id'>
+        Details
+      </NavLink>
+      <hr/>
+    
     </nav>
   )
 }

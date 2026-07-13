@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+const VITE_API_URL=https://playlist-music-app-backend.onrender.com
+
 
 function PlaylistDetails() {
   const { id } = useParams();
   const [playlist, setPlaylist] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/playlists/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
+    async function fullPlaylist(){
+        const response = await fetch(`${VITE_API_URL}/${id}`)
+        const data = await response.json();
         setPlaylist(data);
-      });
+        };
+        fullPlaylist();
   }, [id]);
 
   if (!playlist) {
