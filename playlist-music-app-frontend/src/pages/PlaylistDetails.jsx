@@ -11,7 +11,7 @@ function PlaylistDetails() {
         const key = import.meta.env.VITE_API_URL
 
     async function fullPlaylist(){
-        const response = await fetch(`${key}/${id}`)
+        const response = await fetch(`${key}/playlists/${id}`)
         const data = await response.json();
         setPlaylist(data);
         };
