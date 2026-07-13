@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import "../App.css";
 import PlaylistCard from "../components/PlaylistCard";
-const VITE_API_URL=https://playlist-music-app-backend.onrender.com
+
     
 
 function Home() {
@@ -11,9 +11,10 @@ function Home() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const key = import.meta.env.VITE_API_URL
     const getData = async () => {
       try {
-        const response = await fetch(`${VITE_API_URL}`);
+        const response = await fetch(`${key}`);
         if (!response.ok) {
           throw new Error("Failed to load playlists");
         }
