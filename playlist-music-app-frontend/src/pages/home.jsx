@@ -14,7 +14,7 @@ function Home() {
     const key = import.meta.env.VITE_API_URL
     const getData = async () => {
       try {
-        const response = await fetch(`${key}`);
+        const response = await fetch(`${key}/playlists`);
         if (!response.ok) {
           throw new Error("Failed to load playlists");
         }
