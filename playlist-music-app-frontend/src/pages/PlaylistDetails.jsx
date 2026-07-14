@@ -8,7 +8,7 @@ function PlaylistDetails() {
   const [playlist, setPlaylist] = useState(null);
 
   useEffect(() => {
-        const key = import.meta.env.VITE_API_URL
+        const key = import.meta.env.VITE_API_URL || "http://localhost:8000"
 
     async function fullPlaylist(){
         const response = await fetch(`${key}/playlists/${id}`)

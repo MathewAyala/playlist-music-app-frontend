@@ -11,7 +11,7 @@ function Home() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const key = import.meta.env.VITE_API_URL
+    const key = import.meta.env.VITE_API_URL ||"http://localhost:8000"
     const getData = async () => {
       try {
         const response = await fetch(`${key}/playlists`);
