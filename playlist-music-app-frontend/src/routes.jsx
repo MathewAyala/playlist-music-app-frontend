@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { useSearchParams } from "react-router";
 import NavBar from "./components/Navbar";
 import Home from "./pages/home";
-import PlaylistDetail from "./pages/PlaylistDetails"
+import PlaylistDetails from "./pages/PlaylistDetails";
 
 function AppRoutes() {
     return (
@@ -11,7 +11,7 @@ function AppRoutes() {
             <NavBar />
             <Routes>
                 <Route path='/' element={<Home/>}/>
-                <Route path='/playlists/:id' element={<PlaylistDetail/>}/>
+                <Route path='/playlists/:id' element={<PlaylistDetails/>}/>
                 {/* <Route path='*' element={<NotFound/>}/> */}
             </Routes>
         </>

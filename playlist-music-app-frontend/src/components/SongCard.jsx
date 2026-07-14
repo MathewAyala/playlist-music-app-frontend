@@ -1,7 +1,7 @@
 function SongCard({songs}){
     return(
         <div className="card">
-            <h1>{songs.title}</h1>
+            <h2>{songs.title}</h2>
             <p>{songs.artiest}</p>
         </div>
     )
