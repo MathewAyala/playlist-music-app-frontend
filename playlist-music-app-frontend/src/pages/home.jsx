@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import "../App.css";
 import PlaylistCard from "../components/PlaylistCard";
 
+    
 
 function Home() {
   const [playlists, setList] = useState([]);
@@ -10,9 +11,10 @@ function Home() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const key = import.meta.env.VITE_API_URL
     const getData = async () => {
       try {
-        const response = await fetch("http://localhost:8000/playlists");
+        const response = await fetch(`${key}/playlists`);
         if (!response.ok) {
           throw new Error("Failed to load playlists");
         }

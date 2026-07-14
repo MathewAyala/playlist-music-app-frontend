@@ -2,16 +2,21 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import SongCard from "../components/SongCard";
 
+
+
 function PlaylistDetails() {
   const { id } = useParams();
   const [playlist, setPlaylist] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/playlists/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
+        const key = import.meta.env.VITE_API_URL
+
+    async function fullPlaylist(){
+        const response = await fetch(`${key}/playlists/${id}`)
+        const data = await response.json();
         setPlaylist(data);
-      });
+        };
+        fullPlaylist();
   }, [id]);
 
   if (!playlist) {
