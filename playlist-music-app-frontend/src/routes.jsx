@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import { useParams } from "react-router";
 import { useSearchParams } from "react-router";
 import NavBar from "./components/Navbar";
-import Home from "./pages/home";
+import Home from "./pages/Home";
 import PlaylistDetails from "./pages/PlaylistDetails";
 
 function AppRoutes() {

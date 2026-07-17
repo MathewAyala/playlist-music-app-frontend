@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
-
-
 function PlaylistDetails() {
   const { id } = useParams();
   const [playlist, setPlaylist] = useState(null);
 
   useEffect(() => {
-        const key = import.meta.env.VITE_API_URL
+    const key = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
-    async function fullPlaylist(){
-        const response = await fetch(`${key}/playlists/${id}`)
-        const data = await response.json();
-        setPlaylist(data);
-        };
-        fullPlaylist();
+    async function fullPlaylist() {
+      const response = await fetch(`${key}/playlists/${id}`);
+      const data = await response.json();
+      console.log(data)
+      setPlaylist(data);
+    }
+    fullPlaylist();
   }, [id]);
 
   if (!playlist) {
@@ -31,7 +30,7 @@ function PlaylistDetails() {
         <div key={song.id}>
           <p>{song.title}</p>
           <p>{song.artist}</p>
-          <br/>
+          <br />
         </div>
       ))}
     </div>
